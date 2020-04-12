@@ -1,1 +1,9 @@
-<p>second-task works!</p>
+<p>{{title}}</p>
+<input [(ngModel)]="date" type="date">
+<button (click)="setMonth(date)">установить дату</button>
+<table>
+    <caption>{{year}} {{monthNames[month]}}</caption>
+    <tr *ngFor="let tr of tableCalendar">
+        <td *ngFor="let td of tr">{{td}}</td>
+    </tr>
+</table>

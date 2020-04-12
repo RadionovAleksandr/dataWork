@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, } from '@angular/core';
 import { BST } from './task';
 import "@angular/compiler";
 @Component({
@@ -8,8 +8,7 @@ import "@angular/compiler";
 })
 export class FirstTaskComponent {
 
-    // @Input() value: number;
-    value;
+    @Input() value: number;
     bst: BST;
     title = 'Написать две процедуры обхода дерева – в глубину и в ширину.';
     constructor() {

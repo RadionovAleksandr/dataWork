@@ -6,7 +6,7 @@ import { SecondTaskComponent } from './pages/second-task/second-task.component';
 
 const routes: Routes = [
   {path: 'first-task', component: FirstTaskComponent},
-  {path: 'first-task', component: SecondTaskComponent},
+  {path: 'second-task', component: SecondTaskComponent},
 ];
 
 @NgModule({
