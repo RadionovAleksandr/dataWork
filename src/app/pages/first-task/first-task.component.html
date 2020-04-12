@@ -1,3 +1,5 @@
-<p>first-task works!</p>
-<!-- <input type="number" [(ngModel)]="value"> -->
-<button>Заупустить задачу</button>
+<p>{{title}}</p>
+<input type="number" [(ngModel)]="value" (keyup.enter)="addNode()">
+<button (click)="addNode()">Добавить узел</button>
+<button (click)="walkWidth()">Поиск в ширину</button>
+<button (click)="walkInDepth()">Поиск в глубину</button>

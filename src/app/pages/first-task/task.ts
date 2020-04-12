@@ -10,31 +10,46 @@ class BSTNode {
     }
 }
 
-class BST {
+export class BST {
     root;
     constructor() {
         this.root = null;
     }
-
     add(value) {
         const node = this.root;
         if (this.root === null) { // если вершина не обьявлена
             this.root = new BSTNode(value); // записываем вершину текущее значенире
             return;
-        } else { // если вершина объявлена                             
+        } else { // если вершина объявлена
             return this.searchNode(node, value);
         }
     }
 
     searchNode(node, value) {
+        if (value === undefined) {
+            return console.log(`Неверный формат ${value}, введите число`);
+        }
+        if (value === node.value) {
+            console.log(`Попытка повторно создать узел \nЗначение: ${value} существует в дереве`);
+            return;
+        }
         if (value < node.value) {
-            return node.left ?
-                this.searchNode(node.left, value) :
-                (node.left = new BSTNode(value));
+            if (node.left) {
+                this.searchNode(node.left, value);
+            } else {
+                console.log(` Значение: ${value} присвоено в левый узел узла ${node.value}`);
+                node.left = new BSTNode(value);
+                return;
+            }
         } else {
-            return node.right ?
-                this.searchNode(node.right, value) :
-                (node.right = new BSTNode(value));
+            if (node.right) {
+                this.searchNode(node.right, value);
+                return;
+            } else {
+                console.log(` Значение: ${value} присвоено в правый узел узл ${node.value}`);
+                node.right = new BSTNode(value);
+                return;
+            }
         }
     }
 
@@ -42,16 +57,21 @@ class BST {
         let step = 0;
         let turn = [];
         let currentRoot = this.root;
+        turn.push(currentRoot); // Поместить в очередь вершину дерева
         while (currentRoot.value !== value) {
             step++;
-            turn.push(currentRoot); // Поместить в очередь корень дерева
+            if (turn.length === 0) {
+                console.log(step);
+                console.log('данного значения нет в узлах дерева');
+                return;
+            };
             currentRoot = turn[0];
             turn = turn.filter(node => node !== currentRoot); //Изъять из очереди очередную вершину. Поместить в очередь ее дочерние вершины 
             currentRoot.left ? turn.push(currentRoot.left) : null;
             currentRoot.right ? turn.push(currentRoot.right) : null;
         }
-        console.log(step)
-        return true
+        console.log(`Мне понадобилось ${step} итераций чтобы найти значение ${value} в обходя дерево в ширину`);
+        return true;
     }
 
 
@@ -62,33 +82,26 @@ class BST {
             step++;
             if (value < currentRoot.value) {
                 if (currentRoot.left === null) {
-                    return false;
+                    currentRoot = null;
+                    console.log(`Количество итераций ${step}`);
+                    console.log('данного значения нет в узлах дерева');
+                    return;
                 } else {
                     currentRoot = currentRoot.left;
                 }
             }
             if (value > currentRoot.value) {
                 if (currentRoot.right === null) {
-                    return false;
+                    currentRoot = null;
+                    console.log(`Количество итераций ${step}`);
+                    console.log('данного значения нет в узлах дерева');
+                    return;
                 } else {
                     currentRoot = currentRoot.right;
                 }
             }
         }
-        console.log(step);
+        console.log(`Мне понадобилось ${step} итераций чтобы найти значение ${value} в обходя дерево в глубину`);
         return true;
     }
 }
-
-const bst = new BST();
-
-bst.add(14);
-bst.add(9);
-bst.add(12);
-bst.add(22);
-bst.add(17);
-bst.add(3);
-bst.add(-1);
-bst.add(25);
-bst.walkWidth(3);
-bst.walkInDepth(3);

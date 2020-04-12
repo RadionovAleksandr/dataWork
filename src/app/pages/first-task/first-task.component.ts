@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-// import { BtnComponent } from './btn/btn.component';
-
+import { BST } from './task';
+import "@angular/compiler";
 @Component({
     selector: 'app-first-task',
     templateUrl: './first-task.component.html',
@@ -8,17 +8,35 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class FirstTaskComponent {
 
-    @Input() value: number;
+    // @Input() value: number;
+    value;
+    bst: BST;
     title = 'Написать две процедуры обхода дерева – в глубину и в ширину.';
-    // constructor(private btn: BtnComponent ) {
-
-    // }
-
-    // addNode(value) {
-    //     this.btn.add(value);
-    // }
-
-    ngOnInit(): void {
+    constructor() {
+        this.bst = new BST();
+        this.bst.add(14);
+        this.bst.add(9);
+        this.bst.add(12);
+        this.bst.add(22);
+        this.bst.add(17);
+        this.bst.add(3);
+        this.bst.add(-1);
+        this.bst.add(25);
+        // this.bst.walkWidth(25);
+        // this.bst.walkWidth(10);
+        // this.bst.walkInDepth(10);
+        // this.bst.walkInDepth(3);
+        this.bst.add(25);
     }
 
+    addNode() {
+        this.bst.add(this.value);
+    }
+    walkWidth() {
+        this.bst.walkWidth(this.value);
+    }
+
+    walkInDepth() {
+        this.bst.walkInDepth(this.value);
+    }
 }
