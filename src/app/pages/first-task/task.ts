@@ -1,4 +1,8 @@
 class BSTNode {
+    value;
+    left;
+    right;
+
     constructor(value) {
         this.value = value;
         this.left = null;
@@ -7,6 +11,7 @@ class BSTNode {
 }
 
 class BST {
+    root;
     constructor() {
         this.root = null;
     }
@@ -87,8 +92,3 @@ bst.add(-1);
 bst.add(25);
 bst.walkWidth(3);
 bst.walkInDepth(3);
-
-
-//// tests
-module.exports = BSTNode;
-// module.exports.BST = BST;
