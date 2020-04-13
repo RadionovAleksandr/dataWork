@@ -1,9 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-second-task',
-  templateUrl: './second-task.component.html',
-  styleUrls: ['./second-task.component.scss']
+    selector: 'app-second-task',
+    templateUrl: './second-task.component.html',
+    styleUrls: ['./second-task.component.scss']
 })
 export class SecondTaskComponent implements OnInit {
     title = 'Нарисовать календарь для месяца, в котором находится заданная дата.';

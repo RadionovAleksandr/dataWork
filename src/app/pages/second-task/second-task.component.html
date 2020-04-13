@@ -1,5 +1,5 @@
 <p>{{title}}</p>
-<input [(ngModel)]="date" type="date">
+<input [(ngModel)]="date" type="date" (keyup.enter)="setMonth(date)">
 <button (click)="setMonth(date)">установить дату</button>
 <table>
     <caption>{{year}} {{monthNames[month]}}</caption>

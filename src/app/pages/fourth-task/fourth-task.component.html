@@ -1,3 +1,4 @@
 <p>{{title}}</p>
-<input type="text" placeholder=" ( { 1 + 3 } [ 4 + < 3 - 5 > ] ) " [(ngModel)]="value">
-<button (click)="balance()">Провеверте выражение на скобоч</button>
+<p>Откройте инструмент разработчика нажав клавишк f12</p>
+<input type="text" placeholder=" ( { 1 + 3 } [ 4 + < 3 - 5 > ] ) " [(ngModel)]="value" (keyup.enter)="balance()">
+<button (click)=" balance()">Проверить</button>
