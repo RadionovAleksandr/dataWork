@@ -23,13 +23,13 @@ describe('FourthTaskComponent', () => {
   });
 
   it('should unbalanced expression', () => {
-    component.value = '(( {x ))'
-    expect(component.balance(this.value)).toBe(false);
+    component.value = '(( {x ))';
+    expect(component.balance(component.value)).toBe(false);
   });
 
   it('should balanced expression', () => {
-    component.value = '(( <x> ))'
-    expect(component.balance(this.value)).toBe(true);
+    component.value = '(( <x> ))';
+    expect(component.balance(component.value)).toBe(true);
   });
 
 });
