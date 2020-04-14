@@ -13,8 +13,7 @@ export class SecondTaskComponent implements OnInit {
     year: number;
     month: number;
     tableCalendar = [];
-
-    @Input() date: Date = new Date();
+    date: Date = new Date();
     constructor() { }
 
     setMonth(date) {
@@ -30,13 +29,11 @@ export class SecondTaskComponent implements OnInit {
             const ROWS: number = (index + diff) / 7;
             const COLS = 7;
 
-            console.log(' start setMonth ');
             let tr = [];
             let day = 1 - index;
             for (let i = 0; i < ROWS; i++) {
                 tr = [];
                 for (let j = 0; j < COLS; j++) {
-                    // console.log(day);
                     day > 0 && day <= diff ? tr.push(day) : tr.push(" ");
                     day++;
                 }
