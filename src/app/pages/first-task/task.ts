@@ -20,7 +20,7 @@ export class BST {
         return this.root;
     }
 
-    // renderTree() {   todo: render trie
+    // renderTree() {   todo: render tree
     //     debugger;
     //     let turn = [];
     //     let table = [];
