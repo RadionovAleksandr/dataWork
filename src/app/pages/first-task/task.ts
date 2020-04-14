@@ -15,6 +15,10 @@ export class BST {
         this.root = null;
     }
     add(value) {
+        if (!value) {
+            console.log(`Неверный формат ${value}, введите число`);
+            return false;
+        }
         const node = this.root;
         if (this.root === null) { // если вершина не обьявлена
             this.root = new BSTNode(value); // записываем вершину текущее значенире
@@ -25,10 +29,6 @@ export class BST {
     }
 
     searchNode(node, value) {
-        if (!value) {
-            console.log(`Неверный формат ${value}, введите число`);
-            return false;
-        }
         if (value === node.value) {
             console.log(`Попытка повторно создать узел \nЗначение: ${value} существует в дереве`);
             return false;
