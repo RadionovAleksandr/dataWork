@@ -14,6 +14,40 @@ export class BST {
     constructor() {
         this.root = null;
     }
+
+    viewTrie() {
+        console.log(this.root);
+        return this.root;
+    }
+
+    // renderTree() {   todo: render trie
+    //     debugger;
+    //     let turn = [];
+    //     let table = [];
+    //     let row = 0;
+    //     let currentRoot = this.root;
+    //     table.push([]);
+    //     table[row].push(currentRoot);
+    //     turn.push(currentRoot);
+
+    //     while (turn.length === 0) {
+    //         row++;
+    //         table.push([]);
+    //         currentRoot = turn[0];
+    //         turn = turn.filter(node => node !== currentRoot);
+    //         if (currentRoot.left) {
+    //             turn.push(currentRoot.left);
+    //             table[row].push(currentRoot.left);
+    //         }
+    //         if (currentRoot.right) {
+    //             turn.push(currentRoot.right);
+    //             table[row].push(currentRoot.right);
+    //         }
+    //     };
+    //     console.log(table);
+    //     return table;
+    // }
+
     add(value) {
         if (!value) {
             console.log(`Неверный формат ${value}, введите число`);
@@ -40,7 +74,6 @@ export class BST {
                 console.log(` Значение: ${value} присвоено в левый узел узла ${node.value}`);
                 node.left = new BSTNode(value);
                 return true;
-                
             }
         } else {
             if (node.right) {

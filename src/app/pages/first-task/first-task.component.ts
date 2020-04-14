@@ -29,6 +29,9 @@ export class FirstTaskComponent {
         // this.bst.walkInDepth(3);
         // this.bst.add(25);
     }
+    viewTree(){
+        this.bst.viewTrie();
+    }
 
     addNode() {
         this.bst.add(this.value);

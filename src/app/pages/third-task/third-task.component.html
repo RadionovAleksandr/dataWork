@@ -1,6 +1,6 @@
 <p>{{title}}</p>
 <input type="number" [(ngModel)]="n" placeholder="n" (keyup.enter)="this.matrixView(this.spiralMatrix(this.n, this.m))">
 <input type="number" [(ngModel)]="m" placeholder="m" (keyup.enter)="this.matrixView(this.spiralMatrix(this.n, this.m))">
-<button (click)="this.matrixView(this.spiralMatrix())">Заполнить массив</button>
+<button (click)="this.matrixView(this.spiralMatrix(this.n, this.m))">Заполнить массив</button>
 <div class="calendar-wrap"></div>
 <div class="block"></div>

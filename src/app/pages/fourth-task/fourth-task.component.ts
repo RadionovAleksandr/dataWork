@@ -12,7 +12,6 @@ export class FourthTaskComponent {
 
     balance(value) {
         if (value.trim()) {
-
             let brackets = {
                 ')': '(',
                 '}': '{',
@@ -26,7 +25,7 @@ export class FourthTaskComponent {
             for (let i = 0; i < value.length; i++) {
 
                 let item = value[i];
-                // if (leftBracets.includes(item) === false && rightBracets.includes(item) === false) {
+                // if (leftBracets.includes(item) === false && rightBracets.includes(item) === false) {  todo: check value includes bracets
                 //     console.log('Для провоерки выражения на скобочную сбалансированность введите выражение содержащее скобки, например  ( { 1 + 3 } [ 4 + < 3 - 5 > ] )');
                 //     return false;
                 // }
