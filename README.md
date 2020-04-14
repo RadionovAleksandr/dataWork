@@ -24,7 +24,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## DOCUMENTATION
 
-## -=!!first task!!=-
+## first task
 class BSTNode - the binary node of the tree, has the form of constructor:
     constructor(value: number) {
     this.value = value;
@@ -60,7 +60,7 @@ from existing note
  Bypass the left subtree.
  Bypass the right subtree
 
-## -=!!Second task!!=-
+## Second task
 class SecondTaskComponent has variables:
 title: string;
 year: number;
@@ -79,7 +79,7 @@ Generates the values ​​of days for presentation in the calendar
     [27	28	29	30	           ]
 ]
 
-## -=!!Third task!!=-
+## Third task
 class ThirdTaskComponent имеет переменные:
 title: string;
 n: number;
@@ -96,7 +96,7 @@ metod: spiralMatrix(n: number, m: number) <[[number]]> || <false> (invalid attri
 metod: matrixView([[number]]) <HTMLelement> 
 visualizes the transferred values ​​in a table.
 
-## -=!!foudth task!!=-
+## foudth task
 class FourthTaskComponent has variables:
 title: string;
 value: string;
