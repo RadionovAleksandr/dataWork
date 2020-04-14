@@ -8,15 +8,12 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class ThirdTaskComponent implements OnInit {
     title = 'Заполнить 2-мерный массив размером N * M числами 1, 2, 3, 4, …, N * M с обходом по спирали к центру.';
-    n;
-    m;
+    n: number;
+    m: number;
     constructor() { }
 
-    spiralMatrix() {
-        let n = this.n;
-        let m = this.m;
-        if (n != false || m != false) {
-
+    spiralMatrix(n, m) {
+        if ((n || m) && n !== 0 && m !== 0) {
             let x = 0, y = 0;
             const matrix = [];
             for (let j = 0; j < n; j++) matrix[j] = new Array(m); // Создаем матрицу
@@ -87,7 +84,8 @@ export class ThirdTaskComponent implements OnInit {
             console.log(matrix);
             return matrix;
         } else {
-            alert('введите ненулевые значения')
+            alert('введите ненулевые значения');
+            return false;
         }
     }
 

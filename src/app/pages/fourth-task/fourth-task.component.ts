@@ -10,8 +10,8 @@ export class FourthTaskComponent {
     value: string;
     constructor() { }
 
-    balance() {
-        if (this.value.trim()) {
+    balance(value) {
+        if (value.trim()) {
 
             let brackets = {
                 ')': '(',
@@ -23,9 +23,9 @@ export class FourthTaskComponent {
             let leftBracets = ['(', '{', '[', '<',];
             let rightBracets = [')', '}', ']', '>',];
             let stack = [];
-            for (let i = 0; i < this.value.length; i++) {
-                // debugger;
-                let item = this.value[i];
+            for (let i = 0; i < value.length; i++) {
+
+                let item = value[i];
                 // if (leftBracets.includes(item) === false && rightBracets.includes(item) === false) {
                 //     console.log('Для провоерки выражения на скобочную сбалансированность введите выражение содержащее скобки, например  ( { 1 + 3 } [ 4 + < 3 - 5 > ] )');
                 //     return false;

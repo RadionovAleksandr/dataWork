@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { FourthTaskComponent } from './fourth-task.component';
 
 describe('FourthTaskComponent', () => {
@@ -22,4 +21,15 @@ describe('FourthTaskComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should unbalanced expression', () => {
+    component.value = '(( {x ))'
+    expect(component.balance(this.value)).toBe(false);
+  });
+
+  it('should balanced expression', () => {
+    component.value = '(( <x> ))'
+    expect(component.balance(this.value)).toBe(true);
+  });
+
 });
