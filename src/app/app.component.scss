@@ -1,5 +1,16 @@
 a {
     padding: 10px 15px;
+    border-radius: 6px 6px 0 0;
+    box-shadow: 1px -2.5px 3px #a0a0a0;
+    background-color: #fff;
+    margin-right: 1px;
+}
+
+.active {
+    position: relative;
+    top: -10px;
+    padding-bottom: 20px;
+    box-shadow: inset 10px 10px gold;
 }
 
 nav {

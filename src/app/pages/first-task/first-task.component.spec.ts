@@ -99,7 +99,18 @@ describe('FirstTaskComponent', () => {
       result.add(2);
       result.add(109);
       const bool = result.add(109);
-      expect(bool).toBe(false); 
+      expect(bool).toBe(false);
     });
   });
+
+  // describe("add", function () {
+  //   it("should вернуть false при попытке передать некорректное значение для добавления узла", function () {
+  //     const result = new BST();
+  //     result.add(1);
+  //     result.add(2);
+  //     const node = { value: 10, left: null, right: null };
+  //     const bool = result.searchNode(node, null);
+  //     expect(bool).toBe(false);
+  //   });
+  // });
 });

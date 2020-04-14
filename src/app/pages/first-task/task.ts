@@ -9,7 +9,6 @@ class BSTNode {
         this.right = null;
     }
 }
-
 export class BST {
     root;
     constructor() {
@@ -26,7 +25,7 @@ export class BST {
     }
 
     searchNode(node, value) {
-        if (value === undefined) {
+        if (!value) {
             console.log(`Неверный формат ${value}, введите число`);
             return false;
         }
@@ -60,7 +59,6 @@ export class BST {
         let currentRoot = this.root;
         turn.push(currentRoot); // Поместить в очередь вершину дерева
         while (currentRoot.value !== value) {
-            debugger
             step++;
             if (turn.length === 0) {
                 console.log(`Количество итераций ${step}`);
@@ -106,7 +104,6 @@ export class BST {
     }
 
     countNode() {
-        debugger
         let step = 0;
         let turn = [];
         let currentRoot = this.root;

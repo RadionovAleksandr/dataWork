@@ -1,6 +1,6 @@
 <p>{{title}}</p>
 <p>Откройте инструмент разработчика нажав клавишк f12</p>
-<input type="number" [(ngModel)]="value" (keyup.enter)="addNode()">
+<input type="number" [(ngModel)]="value" (keyup.enter)="addNode()" placeholder="12">
 <button (click)="addNode()">Добавить узел</button>
 <button (click)="walkWidth()">Поиск в ширину</button>
 <button (click)="walkInDepth()">Поиск в глубину</button>

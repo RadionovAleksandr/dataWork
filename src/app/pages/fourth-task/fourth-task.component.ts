@@ -5,14 +5,14 @@ import { Component, OnInit } from '@angular/core';
     templateUrl: './fourth-task.component.html',
     styleUrls: ['./fourth-task.component.scss']
 })
-export class FourthTaskComponent  {
+export class FourthTaskComponent {
     title = 'Проверить сбалансированность скобочной структуры в произвольном выражении.';
     value: string;
     constructor() { }
 
     balance() {
         if (this.value.trim()) {
-            
+
             let brackets = {
                 ')': '(',
                 '}': '{',
@@ -26,6 +26,11 @@ export class FourthTaskComponent  {
             for (let i = 0; i < this.value.length; i++) {
                 // debugger;
                 let item = this.value[i];
+                // if (leftBracets.includes(item) === false && rightBracets.includes(item) === false) {
+                //     console.log('Для провоерки выражения на скобочную сбалансированность введите выражение содержащее скобки, например  ( { 1 + 3 } [ 4 + < 3 - 5 > ] )');
+                //     return false;
+                // }
+
                 if (leftBracets.includes(item)) {
                     stack.push(item);
                 }

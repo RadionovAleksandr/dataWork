@@ -1,8 +1,9 @@
+<h1>{{title}}</h1>
 <nav>
-    <a [routerLink]="['/first-task']">Первая задача</a>
-    <a [routerLink]="['/second-task']">Вторая задача</a>
-    <a [routerLink]="['/third-task']">Третья задача</a>
-    <a [routerLink]="['/fourth-task']">Четвертая задача</a>
-    <a>Пятая задача</a>
+    <a routerLinkActive="active" [routerLink]="['/first-task']">Первая задача</a>
+    <a routerLinkActive="active" [routerLink]="['/second-task']">Вторая задача</a>
+    <a routerLinkActive="active" [routerLink]="['/third-task']">Третья задача</a>
+    <a routerLinkActive="active" [routerLink]="['/fourth-task']">Четвертая задача</a>
+    <a routerLinkActive="active">Пятая задача</a>
 </nav>
 <router-outlet></router-outlet>
