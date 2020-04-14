@@ -19,7 +19,7 @@ export class BST {
         const node = this.root;
         if (this.root === null) { // если вершина не обьявлена
             this.root = new BSTNode(value); // записываем вершину текущее значенире
-            return;
+            return true;
         } else { // если вершина объявлена
             return this.searchNode(node, value);
         }
@@ -27,28 +27,29 @@ export class BST {
 
     searchNode(node, value) {
         if (value === undefined) {
-            return console.log(`Неверный формат ${value}, введите число`);
+            console.log(`Неверный формат ${value}, введите число`);
+            return false;
         }
         if (value === node.value) {
             console.log(`Попытка повторно создать узел \nЗначение: ${value} существует в дереве`);
-            return;
+            return false;
         }
         if (value < node.value) {
             if (node.left) {
-                this.searchNode(node.left, value);
+                return this.searchNode(node.left, value);
             } else {
                 console.log(` Значение: ${value} присвоено в левый узел узла ${node.value}`);
                 node.left = new BSTNode(value);
-                return;
+                return true;
+                
             }
         } else {
             if (node.right) {
-                this.searchNode(node.right, value);
-                return;
+                return this.searchNode(node.right, value);
             } else {
                 console.log(` Значение: ${value} присвоено в правый узел узл ${node.value}`);
                 node.right = new BSTNode(value);
-                return;
+                return true;
             }
         }
     }
@@ -59,24 +60,24 @@ export class BST {
         let currentRoot = this.root;
         turn.push(currentRoot); // Поместить в очередь вершину дерева
         while (currentRoot.value !== value) {
+            debugger
             step++;
             if (turn.length === 0) {
-                console.log(step);
+                console.log(`Количество итераций ${step}`);
                 console.log('данного значения нет в узлах дерева');
-                return;
+                return false;
             };
             currentRoot = turn[0];
             turn = turn.filter(node => node !== currentRoot); //Изъять из очереди очередную вершину. Поместить в очередь ее дочерние вершины 
             currentRoot.left ? turn.push(currentRoot.left) : null;
             currentRoot.right ? turn.push(currentRoot.right) : null;
         }
-        console.log(`Мне понадобилось ${step} итераций чтобы найти значение ${value} в обходя дерево в ширину`);
-        return true;
+        console.log(`Мне понадобилось ${step} итераций чтобы найти значение ${value} в обходя дерево в глубину`);
+        return step;
     }
 
-
     walkInDepth(value) {
-        let step = 0;
+        let step = 1;
         let currentRoot = this.root;
         while (currentRoot.value !== value) {
             step++;
@@ -85,7 +86,7 @@ export class BST {
                     currentRoot = null;
                     console.log(`Количество итераций ${step}`);
                     console.log('данного значения нет в узлах дерева');
-                    return;
+                    return false;
                 } else {
                     currentRoot = currentRoot.left;
                 }
@@ -93,15 +94,31 @@ export class BST {
             if (value > currentRoot.value) {
                 if (currentRoot.right === null) {
                     currentRoot = null;
-                    console.log(`Количество итераций ${step}`);
                     console.log('данного значения нет в узлах дерева');
-                    return;
+                    return step;
                 } else {
                     currentRoot = currentRoot.right;
                 }
             }
         }
         console.log(`Мне понадобилось ${step} итераций чтобы найти значение ${value} в обходя дерево в глубину`);
-        return true;
+        return step;
+    }
+
+    countNode() {
+        debugger
+        let step = 0;
+        let turn = [];
+        let currentRoot = this.root;
+        turn.push(currentRoot); // Поместить в очередь вершину дерева
+        while (turn.length !== 0) {
+            step++;
+            currentRoot = turn[0];
+            turn = turn.filter(node => node !== currentRoot); //Изъять из очереди очередную вершину. Поместить в очередь ее дочерние вершины 
+            currentRoot.left ? turn.push(currentRoot.left) : null;
+            currentRoot.right ? turn.push(currentRoot.right) : null;
+        }
+        console.log(`В дереве ${step} узлов`);
+        return step;
     }
 }

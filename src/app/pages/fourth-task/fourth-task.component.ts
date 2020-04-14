@@ -5,16 +5,10 @@ import { Component, OnInit } from '@angular/core';
     templateUrl: './fourth-task.component.html',
     styleUrls: ['./fourth-task.component.scss']
 })
-export class FourthTaskComponent implements OnInit {
+export class FourthTaskComponent  {
     title = 'Проверить сбалансированность скобочной структуры в произвольном выражении.';
     value: string;
-
-
     constructor() { }
-
-    ngOnInit(): void {
-
-    };
 
     balance() {
         if (this.value.trim()) {
