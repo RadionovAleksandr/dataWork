@@ -18,15 +18,13 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
--=!!first task!!=-
+## DOCUMENTATION
+
+## -=!!first task!!=-
 class BSTNode - the binary node of the tree, has the form of constructor:
     constructor(value: number) {
     this.value = value;
@@ -62,8 +60,8 @@ from existing note
  Bypass the left subtree.
  Bypass the right subtree
 
--=!!Second task!!=-
-class SecondTaskComponent имеет переменные:
+## -=!!Second task!!=-
+class SecondTaskComponent has variables:
 title: string;
 year: number;
 month: number;
@@ -81,7 +79,7 @@ Generates the values ​​of days for presentation in the calendar
     [27	28	29	30	           ]
 ]
 
--=!!Third task!!=-
+## -=!!Third task!!=-
 class ThirdTaskComponent имеет переменные:
 title: string;
 n: number;
@@ -98,11 +96,10 @@ metod: spiralMatrix(n: number, m: number) <[[number]]> || <false> (invalid attri
 metod: matrixView([[number]]) <HTMLelement> 
 visualizes the transferred values ​​in a table.
 
--=!!foudth task!!=-
-class FourthTaskComponent имеет переменные:
+## -=!!foudth task!!=-
+class FourthTaskComponent has variables:
 title: string;
 value: string;
 
-metod: balance(value: string) <true> скобочная структура сбалансирвоана || <false> скобочная структура не сбалансирована
-bиспользует структуру стек для првоедения анализа скобочной сбалансированности
-
+metod: balance(value: string) <true> bracket structure balanced || <false>  bracket structure disbalanced
+uses a stack structure to perform a brace analysis
