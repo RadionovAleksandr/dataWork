@@ -4,6 +4,7 @@ import { FirstTaskComponent } from './pages/first-task/first-task.component';
 import { SecondTaskComponent } from './pages/second-task/second-task.component';
 import { ThirdTaskComponent } from './pages/third-task/third-task.component';
 import { FourthTaskComponent } from './pages/fourth-task/fourth-task.component';
+import { FifthTaskComponent } from './pages/fifth-task/fifth-task.component';
 
 
 const routes: Routes = [
@@ -11,6 +12,7 @@ const routes: Routes = [
   {path: 'second-task', component: SecondTaskComponent},
   {path: 'third-task', component: ThirdTaskComponent},
   {path: 'fourth-task', component: FourthTaskComponent},
+  {path: 'fifith-task', component: FifthTaskComponent}
 ];
 
 @NgModule({
