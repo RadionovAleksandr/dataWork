@@ -79,7 +79,7 @@ export class BST {
             if (node.right) {
                 return this.searchNode(node.right, value);
             } else {
-                console.log(` Значение: ${value} присвоено в правый узел узл ${node.value}`);
+                console.log(` Значение: ${value} присвоено в правый узел узла ${node.value}`);
                 node.right = new BSTNode(value);
                 return true;
             }
@@ -103,7 +103,7 @@ export class BST {
             currentRoot.left ? turn.push(currentRoot.left) : null;
             currentRoot.right ? turn.push(currentRoot.right) : null;
         }
-        console.log(`Мне понадобилось ${step} итераций чтобы найти значение ${value} в обходя дерево в глубину`);
+        console.log(`Мне понадобилось ${step} итераций чтобы найти значение ${value} обходя дерево в ширину`);
         return step;
     }
 
@@ -132,7 +132,7 @@ export class BST {
                 }
             }
         }
-        console.log(`Мне понадобилось ${step} итераций чтобы найти значение ${value} в обходя дерево в глубину`);
+        console.log(`Мне понадобилось ${step} итераций чтобы найти значение ${value} обходя дерево в глубину`);
         return step;
     }
 
@@ -148,7 +148,7 @@ export class BST {
             currentRoot.left ? turn.push(currentRoot.left) : null;
             currentRoot.right ? turn.push(currentRoot.right) : null;
         }
-        console.log(`В дереве ${step} узлов`);
+        console.log(`В дереве ${step} узл-а/ов`);
         return step;
     }
 }
